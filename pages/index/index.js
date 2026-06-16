@@ -28,6 +28,12 @@ Page({
     
   },
 
+  ondailyHunt() {
+    my.navigateTo({
+      url: '/pages/daily-hunt/daily-hunt'
+    });
+  },
+
   onEnglishanguage() {
 
     this.setData({

@@ -52,9 +52,6 @@
 
     <view class="relative group mb-1.5">
 
-      <view class="absolute -inset-0.5 bg-gradient-to-r from-red-600 to-red-500 rounded-lg opacity-50 group-active:opacity-100 blur transition duration-300">
-      </view>
-
       <view class="relative px-1.5 py-1.5 bg-gray-900 rounded-lg border border-red-600/30 active:scale-[0.98] transition-transform duration-150">
         <!-- Cover Photo -->
         <view class="relative -mx-1.5 -mt-1.5 mb-3 overflow-hidden rounded-t-lg h-32">
@@ -98,18 +95,20 @@
           </view>
         </view>
 
-        <view class=" relative group">
+        <!-- Get Started Button - Fixed -->
+        <view class="relative group">
           <view class="absolute -inset-1 bg-gradient-to-r from-red-600 via-red-500 to-red-400 rounded-lg opacity-50 group-active:opacity-100 blur-lg transition duration-300">
           </view>
-          <button-red onClickMe="onGetStarted" text="{{ i18n.index.get_started }}">
-            <view class="relative w-full py-1 bg-gradient-to-r from-red-600 via-red-500 to-red-400 text-white text-sm font-bold text-center rounded-lg shadow-lg shadow-red-600/20 active:scale-[0.98] transition-all duration-150 overflow-hidden">
-              <view class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer">
-              </view>
-              <view class="relative flex items-center justify-center gap-1">
-                <text>{{ i18n.daily_hunt_main.start_todays_hunt }}</text>
-              </view>
+          <view 
+            class="relative w-full py-1 bg-gradient-to-r from-red-600 via-red-500 to-red-400 text-white text-sm font-bold text-center rounded-lg shadow-lg shadow-red-600/20 active:scale-[0.98] transition-all duration-150 overflow-hidden cursor-pointer"
+            onTap="onIntro"
+          >
+            <view class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer">
             </view>
-          </button-red>
+            <view class="relative flex items-center justify-center gap-1">
+              <text>{{ i18n.daily_hunt_main.start_todays_hunt || 'Get Started' }}</text>
+            </view>
+          </view>
         </view>
 
       </view>
@@ -122,46 +121,35 @@
           <view class="">
           </view>
 
-          <view class="col-span-2   bg-white  border mb-2  px-1.5  rounded">
+          <view class="col-span-2 bg-white border mb-2 px-1.5 rounded">
             <text class="text-xs font-medium">Expires in 4H</text>
           </view>
-
-
         </view>
+        
         <view>
           <text class="text-white text-xs">
             {{i18n.daily_hunt_main.referral_sub_text}}
           </text>
         </view>
 
-        <view>
-
-        </view>
-
-
+        <!-- Invite Friends Button - Fixed -->
         <view class="mt-2 relative group">
-
-
-          <button-red text="{{ i18n.index.get_started }}">
-            <view class="relative w-full py-1 bg-gradient-to-r from-red-600 via-red-500 to-red-400 text-white text-sm font-bold text-center rounded-lg shadow-lg shadow-red-600/20 active:scale-[0.98] transition-all duration-150 overflow-hidden">
-              <view class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer">
-              </view>
-              <view class="relative flex items-center justify-center gap-1">
-                <text>{{ i18n.daily_hunt_main.referral_button }}</text>
-              </view>
+          <view 
+            class="relative w-full py-1 bg-gradient-to-r from-red-600 via-red-500 to-red-400 text-white text-sm font-bold text-center rounded-lg shadow-lg shadow-red-600/20 active:scale-[0.98] transition-all duration-150 overflow-hidden cursor-pointer"
+            onTap="onInviteFriends"
+          >
+            <view class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer">
             </view>
-          </button-red>
+            <view class="relative flex items-center justify-center gap-1">
+              <text>{{ i18n.daily_hunt_main.referral_button || 'Invite Friends' }}</text>
+            </view>
+          </view>
         </view>
-
 
       </view>
-
-
-
 
     </view>
 
   </view>
-
 
 </view>

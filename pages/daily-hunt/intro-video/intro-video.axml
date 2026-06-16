@@ -13,7 +13,6 @@
     </view>
   </view>
 
-
   <!-- Animated floating particles -->
   <view class="absolute inset-0">
     <view class="absolute top-10 left-10 w-16 h-16 bg-red-600/20 rounded-full blur-xl animate-float">
@@ -30,57 +29,58 @@
     </view>
   </view>
 
-
   <!-- Main Content -->
   <view class="relative z-10">
-
 
     <!-- Hero Section -->
     <view class="text-center relative">
       <view class="absolute inset-0 bg-gradient-to-r from-red-600/30 via-red-500/30 to-red-400/30 blur-xl">
       </view>
     </view>
-  </view>
 
-  <!-- Section Header -->
-  <view class="flex items-center justify-center gap-2 mt-1 mb-1">
-    <view class="h-px flex-1 bg-gradient-to-r from-transparent via-red-500/50 to-transparent">
+    <!-- Section Header -->
+    <view class="flex items-center justify-center gap-2 mt-1 mb-1">
+      <view class="h-px flex-1 bg-gradient-to-r from-transparent via-red-500/50 to-transparent">
+      </view>
+      <text class="text-red-400 text-2xs font-bold tracking-[0.2em] uppercase">
+        Learn
+      </text>
+      <view class="h-px flex-1 bg-gradient-to-r from-transparent via-red-500/50 to-transparent">
+      </view>
     </view>
-    <text class="text-red-400 text-2xs font-bold tracking-[0.2em] uppercase">
-      Learn
-    </text>
-    <view class="h-px flex-1 bg-gradient-to-r from-transparent via-red-500/50 to-transparent">
-    </view>
-  </view>
 
-  <view class="relative group mb-1.5">
-    <view class="absolute -inset-0.5 bg-gradient-to-r from-red-600 to-red-500 rounded-lg opacity-50 group-active:opacity-100 blur transition duration-300">
+    <!-- Video Section -->
+    <view class="relative group mb-1.5">
+      <view class="absolute -inset-0.5 bg-gradient-to-r from-red-600 to-red-500 rounded-lg opacity-50 group-active:opacity-100 blur transition duration-300">
+      </view>
+      <view class="relative px-1.5 py-1.5 bg-gray-900 rounded-lg border border-red-600/30 active:scale-[0.98] transition-transform duration-150">
+        <video
+          id="myVideo"
+          src="/assets/video/learn.mp4"
+          style="height:300px;width:100%;"
+          controls
+          autoplay="{{true}}"
+        >
+        </video>
+      </view>
     </view>
-    <view class="relative px-1.5 py-1.5 bg-gray-900 rounded-lg border border-red-600/30 active:scale-[0.98] transition-transform duration-150">
-      <video
-        id="myVideo"
-        src="/assets/video/learn.mp4"
-        style="height:300px;width:100%;"
-        controls
-        autoplay="{{true}}"
+
+    <!-- Continue Button - Fixed -->
+    <view class="relative group">
+      <view class="absolute -inset-1 bg-gradient-to-r from-red-600 via-red-500 to-red-400 rounded-lg opacity-50 group-active:opacity-100 blur-lg transition duration-300">
+      </view>
+      <view 
+        class="relative w-full py-1 bg-gradient-to-r from-red-600 via-red-500 to-red-400 text-white text-sm font-bold text-center rounded-lg shadow-lg shadow-red-600/20 active:scale-[0.98] transition-all duration-150 overflow-hidden cursor-pointer"
+        onTap="goToQuestions"
       >
-      </video>
-    </view>
-  </view>
-
-
-  <view class=" relative group">
-    <view class="absolute -inset-1 bg-gradient-to-r from-red-600 via-red-500 to-red-400 rounded-lg opacity-50 group-active:opacity-100 blur-lg transition duration-300">
-    </view>
-    <button-red onClickMe="onGetStarted" text="{{ i18n.index.get_started }}">
-      <view class="relative w-full py-1 bg-gradient-to-r from-red-600 via-red-500 to-red-400 text-white text-sm font-bold text-center rounded-lg shadow-lg shadow-red-600/20 active:scale-[0.98] transition-all duration-150 overflow-hidden">
         <view class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer">
         </view>
         <view class="relative flex items-center justify-center gap-1">
-          <text>{{ i18n.index.continue }}</text>
+          <text>{{ i18n.index.continue || 'Continue' }}</text>
         </view>
       </view>
-    </button-red>
+    </view>
+
   </view>
 
 </view>

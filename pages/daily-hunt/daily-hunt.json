@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "button-red": "../../components/button-red-full/button-red-full"
+
+  }
 }

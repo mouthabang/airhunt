@@ -26,4 +26,12 @@ Page({
     });
 
   },
+  goToQuestions() {
+    console.log("We are hereeee");
+    my.navigateTo({
+      url: '/pages/questions/questions'
+    });
+  }
+
+
 });

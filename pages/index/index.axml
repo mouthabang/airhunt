@@ -43,7 +43,7 @@
     </view>
 
     <!-- Card 1: Daily Habit -->
-    <view class="relative group mb-1.5">
+    <view onTap="ondailyHunt" class="relative group mb-1.5">
       <view class="absolute -inset-0.5 bg-gradient-to-r from-red-600 to-red-500 rounded-lg opacity-50 group-active:opacity-100 blur transition duration-300"></view>
       <view class="relative px-1.5 py-1.5 bg-gray-900 rounded-lg border border-red-600/30 active:scale-[0.98] transition-transform duration-150">
         <view class=""></view>

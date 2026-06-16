@@ -55,7 +55,7 @@
 
         <view class="grid grid-cols-3">
           <view class="col-span-2">
-            <text class="text-white text-sm"> Question {{questionCount}} of 10</text>
+            <text class="text-white text-sm"> Question {{questionCount}} of 5</text>
           </view>
 
           <view class="flex justify-end">
@@ -64,7 +64,6 @@
         </view>
 
         <view class="progress-wrapper mt-2">
-          <!-- Built-in progress without text -->
           <progress
             percent="{{progressPercent}}"
             active
@@ -73,16 +72,14 @@
             background-color="#E5E5E5"
             show-info="{{false}}"
           />
-
-          <!-- Custom red percentage text -->
           <text class="progress-text-red">{{progressPercent}}%</text>
         </view>
 
         <view class="">
           <view class="grid grid-cols-3 mt-1">
 
-            <view class="bg-red-600/30   border border-red-500/30 px-1.5 rounded">
-              <text class=" text-white text-xs font-medium">Connectivity</text>
+            <view class="bg-red-600/30 border border-red-500/30 px-1.5 rounded">
+              <text class="text-white text-xs font-medium">Connectivity</text>
             </view>
 
             <view class="flex justify-center">
@@ -95,39 +92,76 @@
           </view>
 
           <view class="mt-2">
-            <text class="text-white text-xl font-bold">
-              Which USSD code is used to check account balances?
-            </text>
+            <text class="text-white text-xl font-bold">{{currentQuestion.question}}</text>
           </view>
         </view>
-
-
-
 
       </view>
     </view>
 
-    <!-- pages/index/index.axml -->
+    <!-- Answer Options -->
     <view class="space-y-1">
       <view
-        a:for="{{bundles}}"
+        a:for="{{currentQuestion.options}}"
         a:key="id"
-        
         class="bg-white rounded-xl p-1 shadow-sm border border-gray-100 flex items-center justify-between"
-        onTap="onBundleTap"
-        data-bundle="{{item}}"
+        onTap="onOptionTap"
+        data-option="{{item}}"
+        data-question="{{currentQuestion}}"
       >
         <view class="flex items-center gap-2">
           <view class="w-5 h-10 rounded-full {{item.bgColor}} flex items-center justify-center">
             <text class="{{item.textColor}} font-bold text-sm">{{item.id}}</text>
           </view>
-          <text class="text-gray-800 font-semibold text-sm">{{item.name}}</text>
+          <text class="text-gray-800 text-sm">{{item.name}}</text>
         </view>
       </view>
     </view>
 
-
   </view>
 
+  <!-- Feedback Overlay -->
+  <view a:if="{{showFeedback}}" class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm">
+    <view class="bg-white rounded-2xl p-6 max-w-sm w-11/12 mx-auto shadow-2xl transform transition-all">
+      <view class="text-center">
+        <view class="w-16 h-16 rounded-full {{feedback.isCorrect ? 'bg-green-100' : 'bg-red-100'}} flex items-center justify-center mx-auto mb-4">
+          <text class="text-3xl">{{feedback.isCorrect ? '✅' : '❌'}}</text>
+        </view>
+        <text class="text-xl font-bold {{feedback.isCorrect ? 'text-green-600' : 'text-red-600'}} block mb-2">
+          {{feedback.isCorrect ? 'Correct!' : 'Incorrect!'}}
+        </text>
+        <text class="text-gray-600 text-sm block mb-4">{{feedback.message}}</text>
+        <view class="flex gap-2 justify-center">
+          <button 
+            class="flex-1 bg-gray-200 text-gray-700 py-2 px-4 rounded-lg text-sm font-medium"
+            onTap="closeFeedback"
+          >
+            Continue
+          </button>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- Quiz Completed Overlay -->
+  <view a:if="{{quizCompleted}}" class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm">
+    <view class="bg-white rounded-2xl p-6 max-w-sm w-11/12 mx-auto shadow-2xl transform transition-all">
+      <view class="text-center">
+        <view class="w-16 h-16 rounded-full bg-yellow-100 flex items-center justify-center mx-auto mb-4">
+          <text class="text-3xl">🏆</text>
+        </view>
+        <text class="text-xl font-bold text-gray-800 block mb-2">Quiz Completed!</text>
+        <text class="text-gray-600 text-sm block mb-2">You scored {{score}} out of 5</text>
+        <view class="flex gap-2 justify-center mt-4">
+          <button 
+            class="flex-1 bg-red-600 text-white py-2 px-4 rounded-lg text-sm font-medium"
+            onTap="restartQuiz"
+          >
+            Play Again
+          </button>
+        </view>
+      </view>
+    </view>
+  </view>
 
 </view>

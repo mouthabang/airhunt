@@ -18,6 +18,19 @@ Page({
       isLoading: false
     });
 
-    
+  },
+
+  onIntro() {
+    console.log("We are hereeee");
+    my.navigateTo({
+      url: '/pages/daily-hunt/intro-video/intro-video'
+    });
+  },
+
+  onInviteFriends() {
+    console.log("We are hereeee");
+    my.navigateTo({
+      url: '/pages/daily-hunt/intro-video/intro-video'
+    });
   }
 });
