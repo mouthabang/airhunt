@@ -30,7 +30,7 @@ Page({
   onInviteFriends() {
     console.log("We are hereeee");
     my.navigateTo({
-      url: '/pages/daily-hunt/intro-video/intro-video'
+      url: '/pages/referral/referral'
     });
   }
 });
