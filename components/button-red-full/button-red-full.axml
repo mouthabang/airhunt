@@ -1,0 +1,4 @@
+<button    disabled="{{isDisabled}}"
+class="{{isDisabled ? 'bg-gray-400' : 'backg'}} rounded-sm hover-class="none" onTap="onClickMe">
+  <text class="text-white">{{text}}</text>
+</button> 

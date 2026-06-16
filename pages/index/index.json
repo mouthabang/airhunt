@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "ant-icon": "antd-mini/es/Icon/index",
+    "ant-avatar": "antd-mini/es/Avatar/index",
+    "ant-list-item": "antd-mini/es/List/ListItem/index",
+    "button-red": "../../components/button-red-full/button-red-full",
+    "loading-spinner": "/components/loading-spinner/loading-spinner"
+
+  }
+}

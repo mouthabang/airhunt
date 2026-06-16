@@ -1,0 +1,5 @@
+<view class="spinner-container">
+  <view  >
+    <image class="w-100 h-vh-40"  src="/assets/imgs/loading.gif" mode="aspectFit" />
+</view>
+</view>
