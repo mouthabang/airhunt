@@ -15,14 +15,35 @@ Page({
     
     this.setData({
       i18n: app.i18n,
-      isLoading: true
+      isLoading: false
     });
 
   },
 
   onGetStarted() {
+    loadLanguage("en");
 
+    this.setData({
+      i18n: app.i18n
+    });
     
+  },
+
+  onEnglishanguage() {
+    loadLanguage("en");
+
+    this.setData({
+      i18n: app.i18n
+    });
+  },
+
+  onSesothoLanguage() {
+
+    loadLanguage("st");
+
+    this.setData({
+      i18n: app.i18n
+    });
   }
   
 });

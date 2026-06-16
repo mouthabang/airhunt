@@ -3,6 +3,7 @@
   "appName": "SSO+Language",
   "languageCode": "en", 
   "index": {
-    "get_started":  "Get Started"
+    "get_started":  "Get Started",
+    "tagline":"Explore The Spirit"
   }
 }
