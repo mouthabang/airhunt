@@ -31,7 +31,7 @@
 
     <view class="text-center mt-1 px-1">
       <text class="text-xs text-gray-200 leading-relaxed">
-        Airhunt and WIN 
+        Air. Hunt. WIN 
       </text>
     </view>
 
@@ -56,7 +56,7 @@
           </view>
           <view class="flex-1">
             <view class="flex items-center justify-between">
-              <text class="text-base font-bold text-white">Daily Habit</text>
+              <text class="text-base font-bold text-white">{{i18n.index.daily_hunt}}</text>
               <view class="bg-red-600/30 backdrop-blur-sm border border-red-500/30 px-1.5 py-0 rounded">
                 <text class="text-red-300 text-xs font-medium">Brand</text>
               </view>

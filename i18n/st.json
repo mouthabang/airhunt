@@ -3,7 +3,8 @@
   "languageCode": "st", 
   "index": {
     "get_started":  "Qala",
-    "tagline":"Kena o bone"
+    "tagline":"Kena o bone",
+    "daily_hunt": "Daily Hunt"
 
 
   }

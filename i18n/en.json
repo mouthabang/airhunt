@@ -4,6 +4,9 @@
   "languageCode": "en", 
   "index": {
     "get_started":  "Get Started",
-    "tagline":"Explore The Spirit"
+
+    "tagline":"Explore The Spirit",
+    "daily_hunt": "Daily Hunt"
+
   }
 }
