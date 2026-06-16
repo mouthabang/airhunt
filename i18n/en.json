@@ -4,9 +4,22 @@
   "languageCode": "en", 
   "index": {
     "get_started":  "Get Started",
-
     "tagline":"Explore The Spirit",
-    "daily_hunt": "Daily Hunt"
+    "daily_hunt": "Daily Hunt",
+    "daily_hunt_tag_line":"Master Vodacom products through Micro-lessons and stand a chance to win daily",
+    "big_hunt_tag_line":"Join a live mass quiz competing against thousands for a chance to WIN BIG monthly"
+
+  },
+  "daily_hunt_main": {
+    "referral_title": "Referral Mission",
+    "referral_sub_text": "Invite 3 friends to join Air Hunt and earn 500MB Data!",
+    "referral_button": "Invite Friends",
+    "referral_invited": "invited",
+
+    "start_todays_hunt":"Start Today's Hunt"
+  },
+
+  "": {
 
   }
 }

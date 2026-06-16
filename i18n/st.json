@@ -4,7 +4,17 @@
   "index": {
     "get_started":  "Qala",
     "tagline":"Kena o bone",
-    "daily_hunt": "Daily Hunt"
+    "daily_hunt": "Daily Hunt",
+    "daily_hunt_tag_line":"Tseba ka lihlaisoa ka Vodacom ka bobebe u ipehe monyetleng oa ho hapa letsatsi le letsatsi",
+    "big_hunt_tag_line":"Kenela mohoanto o moholo. Itute ka lihlaisoa tsa Vodacom, araba lipotso, u ipehe monyetleng oa ho hapa khoeli le khoeli"
+  },
+
+  "daily_hunt_main": {
+    "referral_title": "Ba tsimung",
+    "referral_sub_text": "O memme bakhotsi ba 3 ho kena Air Hunt, ot tlo hapa 500MB Data!",
+    "referral_button": "Mema bakhotsi ba",
+    "referral_invited": "ba memmuoeng",
+    "start_todays_hunt":"Qala hunt ea letsatsi"
 
 
   }

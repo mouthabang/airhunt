@@ -1,0 +1,9 @@
+{
+  "modes": [
+    {
+      "title": "pages/daily-hunt/daily-hunt",
+      "page": "pages/daily-hunt/daily-hunt",
+      "pageQuery": ""
+    }
+  ]
+}

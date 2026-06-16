@@ -1,23 +1,22 @@
+
+
 import {
   loadLanguage
 } from '/i18n/i18n';
 const app = getApp();
 
 Page({
-
   data: {
-    isLoading: false,
+    isLoading: false
 
   },
   onLoad() {
-    console.log(app);
     loadLanguage(app.languageCode);
     
     this.setData({
       i18n: app.i18n,
       isLoading: false
     });
-
   },
 
   onGetStarted() {
@@ -30,20 +29,40 @@ Page({
   },
 
   onEnglishanguage() {
-    loadLanguage("en");
 
     this.setData({
-      i18n: app.i18n
+      isLoading: true
     });
+
+    setTimeout(() => {
+
+      loadLanguage("en");
+
+      this.setData({
+        i18n: app.i18n,
+        isLoading: false
+
+      });
+
+    }, 2000);
+    
   },
 
   onSesothoLanguage() {
-
-    loadLanguage("st");
-
     this.setData({
-      i18n: app.i18n
+      isLoading: true
     });
+
+    setTimeout(() => {
+
+      loadLanguage("st");
+
+      this.setData({
+        i18n: app.i18n,
+        isLoading: false
+      });
+
+    }, 2000);
   }
   
 });
