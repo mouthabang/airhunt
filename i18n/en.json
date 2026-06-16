@@ -3,6 +3,7 @@
   "appName": "SSO+Language",
   "languageCode": "en", 
   "index": {
+    "continue":"Continue",
     "get_started":  "Get Started",
     "tagline":"Explore The Spirit",
     "daily_hunt": "Daily Hunt",
@@ -19,7 +20,9 @@
     "start_todays_hunt":"Start Today's Hunt"
   },
 
-  "": {
+  "learning": {
+
+    "":""
 
   }
 }

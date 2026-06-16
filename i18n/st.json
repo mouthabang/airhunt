@@ -2,6 +2,7 @@
   "appName": "SSO+Language",
   "languageCode": "st", 
   "index": {
+    "continue":"Tsoela Pele",
     "get_started":  "Qala",
     "tagline":"Kena o bone",
     "daily_hunt": "Daily Hunt",

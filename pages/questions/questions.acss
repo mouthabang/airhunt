@@ -1,0 +1,19 @@
+/* ACSS */
+.progress-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.progress-wrapper progress {
+  flex: 1;
+}
+
+.progress-text-red {
+  color: #e65000; /* Red text matching your progress color */
+  font-size: 14px;
+  font-weight: 600;
+  min-width: 40px;
+  text-align: right;
+}

@@ -1,0 +1,133 @@
+<view class="p-1.5 min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden">
+
+  <!-- Loading Overlay -->
+  <view a:if="{{isLoading}}" class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm">
+    <view class="relative">
+      <loading-spinner size="40px" color="#ff4d4f" backgroundColor="rgba(255, 77, 79, 0.2)" />
+      <view class="w-12 h-12 rounded-full border-2 border-red-600/30 animate-pulse">
+      </view>
+      <view class="absolute inset-0 w-12 h-12 rounded-full border-t-2 border-l-2 border-red-600 animate-spin">
+      </view>
+      <view class="absolute inset-2 w-8 h-8 rounded-full border-b-2 border-r-2 border-red-500 animate-spin-reverse">
+      </view>
+    </view>
+  </view>
+
+  <!-- Animated floating particles -->
+  <view class="absolute inset-0">
+    <view class="absolute top-10 left-10 w-16 h-16 bg-red-600/20 rounded-full blur-xl animate-float">
+    </view>
+    <view
+      class="absolute top-40 right-10 w-20 h-20 bg-red-500/20 rounded-full blur-xl animate-float"
+      style="animation-delay: 1s;"
+    >
+    </view>
+    <view
+      class="absolute bottom-20 left-1/3 w-12 h-12 bg-red-700/20 rounded-full blur-xl animate-float"
+      style="animation-delay: 2s;"
+    >
+    </view>
+  </view>
+
+
+  <view class="relative z-10">
+
+    <!-- Hero Section -->
+    <view class="text-center relative">
+      <view class="absolute inset-0 bg-gradient-to-r from-red-600/30 via-red-500/30 to-red-400/30 blur-xl">
+      </view>
+    </view>
+
+    <!-- Section Header -->
+    <view class="flex items-center justify-center gap-2 mt-1 mb-1">
+      <view class="h-px flex-1 bg-gradient-to-r from-transparent via-red-500/50 to-transparent">
+      </view>
+      <text class="text-red-400 text-2xs font-bold tracking-[0.2em] uppercase">
+        Let the hunt begin
+      </text>
+      <view class="h-px flex-1 bg-gradient-to-r from-transparent via-red-500/50 to-transparent">
+      </view>
+    </view>
+
+    <view class="relative group mb-1.5">
+
+      <view class="relative px-1.5 py-1.5 bg-gray-900 rounded-lg border border-red-600/30 active:scale-[0.98] transition-transform duration-150">
+
+        <view class="grid grid-cols-3">
+          <view class="col-span-2">
+            <text class="text-white text-sm"> Question {{questionCount}} of 10</text>
+          </view>
+
+          <view class="flex justify-end">
+            <text class="text-sm text-white">{{countdown}}s</text>
+          </view>
+        </view>
+
+        <view class="progress-wrapper mt-2">
+          <!-- Built-in progress without text -->
+          <progress
+            percent="{{progressPercent}}"
+            active
+            stroke-width="8"
+            active-color="#e65000"
+            background-color="#E5E5E5"
+            show-info="{{false}}"
+          />
+
+          <!-- Custom red percentage text -->
+          <text class="progress-text-red">{{progressPercent}}%</text>
+        </view>
+
+        <view class="">
+          <view class="grid grid-cols-3 mt-1">
+
+            <view class="bg-red-600/30   border border-red-500/30 px-1.5 rounded">
+              <text class=" text-white text-xs font-medium">Connectivity</text>
+            </view>
+
+            <view class="flex justify-center">
+              ⚡
+            </view>
+
+            <view >
+              <text class="text-sm text-white">+ 50 Points</text>
+            </view>
+          </view>
+
+          <view class="mt-2">
+            <text class="text-white text-xl font-bold">
+              Which USSD code is used to check account balances?
+            </text>
+          </view>
+        </view>
+
+
+
+
+      </view>
+    </view>
+
+    <!-- pages/index/index.axml -->
+    <view class="space-y-1">
+      <view
+        a:for="{{bundles}}"
+        a:key="id"
+        
+        class="bg-white rounded-xl p-1 shadow-sm border border-gray-100 flex items-center justify-between"
+        onTap="onBundleTap"
+        data-bundle="{{item}}"
+      >
+        <view class="flex items-center gap-2">
+          <view class="w-5 h-10 rounded-full {{item.bgColor}} flex items-center justify-center">
+            <text class="{{item.textColor}} font-bold text-sm">{{item.id}}</text>
+          </view>
+          <text class="text-gray-800 font-semibold text-sm">{{item.name}}</text>
+        </view>
+      </view>
+    </view>
+
+
+  </view>
+
+
+</view>

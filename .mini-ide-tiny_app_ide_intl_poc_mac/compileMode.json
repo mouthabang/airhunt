@@ -4,6 +4,16 @@
       "title": "pages/daily-hunt/daily-hunt",
       "page": "pages/daily-hunt/daily-hunt",
       "pageQuery": ""
+    },
+    {
+      "title": "daily-hunt/intro-video/intro-video",
+      "page": "pages/daily-hunt/intro-video/intro-video",
+      "pageQuery": ""
+    },
+    {
+      "title": "pages/questions/questions",
+      "page": "pages/questions/questions",
+      "pageQuery": ""
     }
   ]
 }
