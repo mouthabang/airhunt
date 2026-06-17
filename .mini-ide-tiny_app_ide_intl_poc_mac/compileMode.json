@@ -19,6 +19,11 @@
       "title": "pages/referral/referral",
       "page": "pages/referral/referral",
       "pageQuery": ""
+    },
+    {
+      "title": "pages/big-hunt/big-hunt",
+      "page": "pages/big-hunt/big-hunt",
+      "pageQuery": ""
     }
   ]
 }

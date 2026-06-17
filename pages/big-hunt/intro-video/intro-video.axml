@@ -1,0 +1,86 @@
+<view class="p-1.5 min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden">
+
+  <!-- Loading Overlay -->
+  <view a:if="{{isLoading}}" class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm">
+    <view class="relative">
+      <loading-spinner size="40px" color="#ff4d4f" backgroundColor="rgba(255, 77, 79, 0.2)" />
+      <view class="w-12 h-12 rounded-full border-2 border-red-600/30 animate-pulse">
+      </view>
+      <view class="absolute inset-0 w-12 h-12 rounded-full border-t-2 border-l-2 border-red-600 animate-spin">
+      </view>
+      <view class="absolute inset-2 w-8 h-8 rounded-full border-b-2 border-r-2 border-red-500 animate-spin-reverse">
+      </view>
+    </view>
+  </view>
+
+  <!-- Animated floating particles -->
+  <view class="absolute inset-0">
+    <view class="absolute top-10 left-10 w-16 h-16 bg-red-600/20 rounded-full blur-xl animate-float">
+    </view>
+    <view
+      class="absolute top-40 right-10 w-20 h-20 bg-red-500/20 rounded-full blur-xl animate-float"
+      style="animation-delay: 1s;"
+    >
+    </view>
+    <view
+      class="absolute bottom-20 left-1/3 w-12 h-12 bg-red-700/20 rounded-full blur-xl animate-float"
+      style="animation-delay: 2s;"
+    >
+    </view>
+  </view>
+
+  <!-- Main Content -->
+  <view class="relative z-10">
+
+    <!-- Hero Section -->
+    <view class="text-center relative">
+      <view class="absolute inset-0 bg-gradient-to-r from-red-600/30 via-red-500/30 to-red-400/30 blur-xl">
+      </view>
+    </view>
+
+    <!-- Section Header -->
+    <view class="flex items-center justify-center gap-2 mt-1 mb-1">
+      <view class="h-px flex-1 bg-gradient-to-r from-transparent via-red-500/50 to-transparent">
+      </view>
+      <text class="text-red-400 text-2xs font-bold tracking-[0.2em] uppercase">
+        Learn
+      </text>
+      <view class="h-px flex-1 bg-gradient-to-r from-transparent via-red-500/50 to-transparent">
+      </view>
+    </view>
+
+    <!-- Video Section -->
+    <view class="relative group mb-1.5">
+      <view class="absolute -inset-0.5 bg-gradient-to-r from-red-600 to-red-500 rounded-lg opacity-50 group-active:opacity-100 blur transition duration-300">
+      </view>
+      <view class="relative px-1.5 py-1.5 bg-gray-900 rounded-lg border border-red-600/30 active:scale-[0.98] transition-transform duration-150">
+        <video
+          id="myVideo"
+          src="/assets/video/Just4YourTownBundles.mp4"
+          style="height:300px;width:100%;"
+          controls
+          autoplay="{{true}}"
+        >
+        </video>
+      </view>
+    </view>
+
+    <!-- Continue Button - Fixed -->
+    <view class="relative group">
+      <view class="absolute -inset-1 bg-gradient-to-r from-red-600 via-red-500 to-red-400 rounded-lg opacity-50 group-active:opacity-100 blur-lg transition duration-300">
+      </view>
+      <view 
+        class="relative w-full py-1 bg-gradient-to-r from-red-600 via-red-500 to-red-400 text-white text-sm font-bold text-center rounded-lg shadow-lg shadow-red-600/20 active:scale-[0.98] transition-all duration-150 overflow-hidden cursor-pointer"
+        onTap="goToQuestions"
+      >
+        <view class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer">
+        </view>
+        <view class="relative flex items-center justify-center gap-1">
+          <text>{{ i18n.index.continue || 'Continue' }}</text>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+</view>

@@ -5,7 +5,9 @@
     "pages/daily-hunt/daily-hunt",
     "pages/daily-hunt/intro-video/intro-video",
     "pages/questions/questions",
-    "pages/referral/referral"
+    "pages/referral/referral",
+    "pages/big-hunt/big-hunt",
+    "pages/big-hunt/intro-video/intro-video"
   ],
   "window": {
     "defaultTitle": ""

@@ -34,6 +34,12 @@ Page({
     });
   },
 
+  onbigHunt() {
+    my.navigateTo({
+      url: '/pages/big-hunt/big-hunt'
+    });
+  },
+
   onEnglishanguage() {
 
     this.setData({
