@@ -2,6 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+/* tailwind-source.css */
+@font-face {
+  font-family: 'VodafoneRegular';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Vodafone Regular'),
+       local('VodafoneRegular'),
+       url('/assets/fonts/vodafone-regular-x.woff2') format('woff2'),
+       url('/assets/fonts/vodafone-regular-x.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'VodafoneLight';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Vodafone Light'),
+       local('VodafoneLight'),
+       url('/assets/fonts/vodafone-light-x.woff2') format('woff2'),
+       url('/assets/fonts/vodafone-light-x.woff') format('woff');
+  font-display: swap;
+}
+
 
 .loading-overlay {
 position: fixed;

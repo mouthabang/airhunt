@@ -1,171 +1,616 @@
-<view class="p-1.5 min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden">
-  
-  <!-- Loading Overlay -->
-  <view a:if="{{isLoading}}" class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm">
-    <view class="relative">
-      <loading-spinner size="40px" color="#ff4d4f" backgroundColor="rgba(255, 77, 79, 0.2)" />
-      <view class="w-12 h-12 rounded-full border-2 border-red-600/30 animate-pulse"></view>
-      <view class="absolute inset-0 w-12 h-12 rounded-full border-t-2 border-l-2 border-red-600 animate-spin"></view>
-      <view class="absolute inset-2 w-8 h-8 rounded-full border-b-2 border-r-2 border-red-500 animate-spin-reverse"></view>
-    </view>
-  </view>
-
-  <!-- Animated floating particles -->
-  <view class="absolute inset-0">
-    <view class="absolute top-10 left-10 w-16 h-16 bg-red-600/20 rounded-full blur-xl animate-float"></view>
-    <view class="absolute top-40 right-10 w-20 h-20 bg-red-500/20 rounded-full blur-xl animate-float" style="animation-delay: 1s;"></view>
-    <view class="absolute bottom-20 left-1/3 w-12 h-12 bg-red-700/20 rounded-full blur-xl animate-float" style="animation-delay: 2s;"></view>
-  </view>
 
 
-  <!-- Main Content -->
-  <view class="relative z-10">
+<view a:if="{{ tAndCs == false }}">
+  <view a:if="{{ step1 == true && step2 == false}}">
     
-    <!-- Hero Section -->
-    <view class="text-center relative">
-      <view class="absolute inset-0 bg-gradient-to-r from-red-600/30 via-red-500/30 to-red-400/30 blur-xl"></view>
-      <view class="relative">
-        <text class="text-3xl font-black bg-gradient-to-r from-red-500 via-red-400 to-red-300 bg-clip-text text-transparent">Moloantoa</text>
-      </view>
-    </view>
-
-    <view class="text-center mt-1 px-1">
-      <text class="text-xs text-gray-200 leading-relaxed">
-        Air. Hunt. WIN 
-      </text>
-    </view>
-
-    <!-- Section Header -->
-    <view class="flex items-center justify-center gap-2 mt-1 mb-1">
-      <view class="h-px flex-1 bg-gradient-to-r from-transparent via-red-500/50 to-transparent"></view>
-      <text class="text-red-400 text-2xs font-bold tracking-[0.2em] uppercase">{{i18n.index.tagline}}</text>
-      <view class="h-px flex-1 bg-gradient-to-r from-transparent via-red-500/50 to-transparent"></view>
-    </view>
-
-    <!-- Card 1: Daily Habit -->
-    <view onTap="ondailyHunt" class="relative group mb-1.5">
-      <view class="relative px-1.5 py-1.5 bg-gray-900 rounded-lg border border-red-600/30 active:scale-[0.98] transition-transform duration-150">
-        <view class=""></view>
-        
-        <view class="flex gap-2">
-          <view class="flex items-start justify-center pt-0.5">
-            <view class="w-4 h-8 bg-red-600 rounded-full flex items-center justify-center shadow-lg shadow-red-600/50">
-              <image class="w-5 h-5" mode="aspectFit" src="/assets/imgs/target.png" />
-            </view>
-          </view>
-          <view class="flex-1">
-            <view class="flex items-center justify-between">
-              <text class="text-base font-bold text-white">{{i18n.index.daily_hunt}}</text>
-              <view class="bg-red-600/30 backdrop-blur-sm border border-red-500/30 px-1.5 py-0 rounded">
-                <text class="text-red-300 text-xs font-medium">Brand</text>
-              </view>
-            </view>
-            <view class="mt-1 flex items-center gap-1">
-              <view class="flex-1 h-1 bg-gray-800 rounded-full overflow-hidden">
-                <view class="h-full w-3/4 bg-gradient-to-r from-red-600 to-red-500 rounded-full animate-shimmer"></view>
-              </view>
-              <text class="text-red-400 text-2xs font-medium">75%</text>
-            </view>
-            <text class="text-xs text-gray-300 mt-1 block leading-relaxed">
-
-              {{i18n.index.daily_hunt_tag_line}}
-            </text>
-          </view>
+    <view class="p-1.5 min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden">
+  
+      <!-- Loading Overlay -->
+      <view a:if="{{isLoading}}" class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm">
+        <view class="relative">
+          <loading-spinner size="40px" color="#ff4d4f" backgroundColor="rgba(255, 77, 79, 0.2)" />
+          <view class="w-12 h-12 rounded-full border-2 border-red-600/30 animate-pulse"></view>
+          <view class="absolute inset-0 w-12 h-12 rounded-full border-t-2 border-l-2 border-red-600 animate-spin"></view>
+          <view class="absolute inset-2 w-8 h-8 rounded-full border-b-2 border-r-2 border-red-500 animate-spin-reverse"></view>
         </view>
       </view>
-    </view>
-
-    <!-- Card 2: Big Air Hunt -->
-    <view onTap="onbigHunt" class="mt-2 relative group mb-1.5">
-      <view class="relative px-1.5 py-1.5 bg-gray-900 rounded-lg border border-red-600/30 active:scale-[0.98] transition-transform duration-150">
-        <view class=""></view>
+    
+      <!-- Animated floating particles -->
+      <view class="absolute inset-0">
+        <view class="absolute top-10 left-10 w-16 h-16 bg-red-600/20 rounded-full blur-xl animate-float"></view>
+        <view class="absolute top-40 right-10 w-20 h-20 bg-red-500/20 rounded-full blur-xl animate-float" style="animation-delay: 1s;"></view>
+        <view class="absolute bottom-20 left-1/3 w-12 h-12 bg-red-700/20 rounded-full blur-xl animate-float" style="animation-delay: 2s;"></view>
+      </view>
+    
+    
+      <!-- Main Content -->
+      <view class="relative z-10">
         
-        <view class="flex gap-2">
-          <view class="flex items-start justify-center pt-0.5">
-            <view class="w-4 h-8 bg-red-600 rounded-full flex items-center justify-center shadow-lg shadow-red-600/50">
-              <image class="w-5 h-5" mode="aspectFit" src="/assets/imgs/trophy.png" />
-            </view>
+        <!-- Hero Section -->
+        <view class="text-center relative">
+          <view class="absolute inset-0 bg-gradient-to-r from-red-600/30 via-red-500/30 to-red-400/30 blur-xl"></view>
+          <view class="relative">
+            <text class="text-3xl font-black bg-gradient-to-r from-red-500 via-red-400 to-red-300 bg-clip-text text-transparent">Moloantoa</text>
           </view>
-          <view class="flex-1">
-            <view class="flex items-center justify-between">
-              <text class="text-base font-bold text-white">Big Air Hunt</text>
-              <view class="flex items-center gap-1 bg-green-500/30 backdrop-blur-sm border border-green-500/30 px-1.5 py-0 rounded">
-                <view class="w-1 h-1 bg-green-400 rounded-full animate-pulse"></view>
-                <text class="text-green-300 text-xs font-medium">Live</text>
+        </view>
+    
+        <view class="text-center mt-1 px-1">
+          <text class="text-base text-gray-200 leading-relaxed">
+            Air. Hunt. WIN 
+          </text>
+        </view>
+    
+        <!-- Section Header -->
+        <view class="flex items-center justify-center gap-2 mt-1 mb-1">
+          <view class="h-px flex-1 bg-gradient-to-r from-transparent via-red-500/50 to-transparent"></view>
+          <text class="text-red-400 text-2xs font-bold tracking-[0.2em] uppercase">{{i18n.index.tagline}}</text>
+          <view class="h-px flex-1 bg-gradient-to-r from-transparent via-red-500/50 to-transparent"></view>
+        </view>
+    
+        <!-- Card 1: Daily Habit -->
+        <view onTap="ondailyHunt" class="relative group mb-1.5">
+          <view class="relative px-1.5 py-1.5 bg-gray-900 rounded-lg border border-red-600/30 active:scale-[0.98] transition-transform duration-150">
+            <view class=""></view>
+            
+            <view class="flex gap-2">
+              <view class="flex items-start justify-center pt-0.5">
+                <view class="w-4 h-8 bg-red-600 rounded-full flex items-center justify-center shadow-lg shadow-red-600/50">
+                  <image class="w-5 h-5" mode="aspectFit" src="/assets/imgs/target.png" />
+                </view>
               </view>
-            </view>
-            <view class=" flex items-center gap-1">
-              <view class="flex -space-x-1">
-                <view class="w-3 h-3 rounded-full bg-red-500 border border-gray-900"></view>
-                <view class="w-3 h-3 rounded-full bg-red-400 border border-gray-900"></view>
-                <view class="w-3 h-3 rounded-full bg-red-300 border border-gray-900"></view>
-              </view>
-              <text class="text-gray-400 text-xs">+2.3k online</text>
-            </view>
-            <view class="mb-2">
-              <text class="text-xs text-gray-300 mt-1 block leading-relaxed">
-                {{i18n.index.big_hunt_tag_line}}
-              </text>
+              <view class="flex-1">
+                <view class="flex items-center justify-between">
+                  <text class="text-base font-bold text-white">{{i18n.index.daily_hunt}}</text>
+                  <view class="bg-red-600/30 border border-red-500/30 px-1.5 py-0 rounded">
+                    <text class="text-red-300 text-xs font-medium">Brand</text>
+                  </view>
+                </view>
+    
+                <view class="mt-1 mb-2 flex items-center gap-1">
+                  <view class="flex-1 h-1 bg-gray-800 rounded-full overflow-hidden">
+                    <view class="h-full w-0 bg-gradient-to-r from-red-600 to-red-500 rounded-full ">
+                    </view>
+                  </view>
+                  <text class="text-red-400 text-2xs font-medium">0%</text>
+                </view>
                 
+                <text class="text-xs text-gray-300 mt-1 block leading-relaxed">
+    
+                  {{i18n.index.daily_hunt_tag_line}}
+                </text>
+              </view>
             </view>
+          </view>
+        </view>
+    
+        <!-- Card 2: Big Air Hunt -->
+        <view onTap="onbigHunt" class="mt-2 relative group mb-1.5">
+          <view class="relative px-1.5 py-1.5 bg-gray-900 rounded-lg border border-red-600/30 active:scale-[0.98] transition-transform duration-150">
+            <view class=""></view>
+            
+            <view class="flex gap-2">
+              <view class="flex items-start justify-center pt-0.5">
+                <view class="w-4 h-8 bg-red-600 rounded-full flex items-center justify-center shadow-lg shadow-red-600/50">
+                  <image class="w-5 h-5" mode="aspectFit" src="/assets/imgs/trophy.png" />
+                </view>
+              </view>
+              <view class="flex-1">
+                <view class="flex items-center justify-between">
+                  <text class="text-base font-bold text-white">Big Air Hunt</text>
+                  <view class="flex items-center gap-1 bg-green-500/30 border border-green-500/30 px-1.5 py-0 rounded">
+                    <view class="w-1 h-1 bg-green-400 rounded-full animate-pulse"></view>
+                    <text class="text-green-300 text-xs font-medium">Live</text>
+                  </view>
+                </view>
+                <view class=" flex items-center gap-1">
+                  <view class="flex -space-x-1">
+                    <view class="w-3 h-3 rounded-full bg-red-500 border border-gray-900"></view>
+                    <view class="w-3 h-3 rounded-full bg-red-400 border border-gray-900"></view>
+                    <view class="w-3 h-3 rounded-full bg-red-300 border border-gray-900"></view>
+                  </view>
+                  <text class="text-gray-400 text-xs">+2.3k online</text>
+                </view>
+                <view class="mb-2">
+                  <text class="text-xs text-gray-300 mt-1 block leading-relaxed">
+                    {{i18n.index.big_hunt_tag_line}}
+                  </text>
+                    
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+    
+        <!-- Language Toggle - Buttons on own row -->
+        <view class=" mb-1.5">
+          <view class="bg-gray-900 border border-red-600/30 rounded-lg p-1.5">
+            <view class="flex items-center gap-1.5 mb-1.5">
+              
+              <text class="text-gray-200 text-xs font-medium">Select language / Khetha Puo</text>
+            </view>
+            
+            <!-- Side by Side Language Buttons on their own row -->
+            <view class="flex gap-2">
+              <!-- English Button -->
+              <view onTap="onEnglishanguage" class="flex-1 relative group">
+                <view class="relative w-full py-1 text-xs font-semibold text-center rounded shadow-lg transition-all duration-150 
+                  {{i18n.languageCode === 'en' ? 'bg-gradient-to-r from-red-600 to-red-500 text-white shadow-red-600/20' : 'bg-gray-800 border border-gray-700 text-gray-300'}}
+                  {{isLoading ? 'opacity-50 pointer-events-none' : ''}}
+                  active:scale-95">
+                  <text>English</text>
+                </view>
+              </view>
+              
+              <!-- Sesotho Button -->
+              <view onTap="onSesothoLanguage" class="flex-1 relative group">
+                <view class="relative w-full py-1 text-xs font-semibold text-center rounded transition-all duration-150 
+                  {{i18n.languageCode === 'st' ? 'bg-gradient-to-r from-red-600 to-red-500 text-white shadow-red-600/20' : 'bg-gray-800 border border-gray-700 text-gray-300'}}
+                  {{isLoading ? 'opacity-50 pointer-events-none' : ''}}
+                  active:scale-95">
+                  <text>Sesotho</text>
+                </view>
+              </view>
+            </view>
+    
+          </view>
+        </view>
+    
+        <!-- CTA Button 
+        <view class="px-1 relative group">
+          <view class="absolute -inset-1 bg-gradient-to-r from-red-600 via-red-500 to-red-400 rounded-lg opacity-50 group-active:opacity-100 blur-lg transition duration-300"></view>
+          <button-red onClickMe="onGetStarted" text="{{ i18n.index.get_started }}">
+            <view class="relative w-full py-2.5 bg-gradient-to-r from-red-600 via-red-500 to-red-400 text-white text-sm font-bold text-center rounded-lg shadow-lg shadow-red-600/20 active:scale-[0.98] transition-all duration-150 overflow-hidden">
+              <view class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer"></view>
+              <view class="relative flex items-center justify-center gap-1">
+                <text>{{ i18n.index.get_started }}</text>
+                <text class="text-lg">⚡</text>
+              </view>
+            </view>
+          </button-red>
+        </view>
+    -->
+        <!-- Bottom indicators -->
+        <view class="flex justify-center mt-3 gap-1">
+          <view class="w-1.5 h-1.5 bg-red-600 rounded-full animate-bounce"></view>
+          <view class="w-1.5 h-1.5 bg-red-500 rounded-full animate-bounce" style="animation-delay: 0.2s;"></view>
+          <view class="w-1.5 h-1.5 bg-red-400 rounded-full animate-bounce" style="animation-delay: 0.4s;"></view>
+        </view>
+    
+      </view>
+    </view>
+    
+
+  </view>
+  <view a:if="{{ step1 == false && step2 == true }}" class="relative h-screen">
+    <!-- Scrollable content area -->
+    <view class="absolute top-0 left-0 right-0 bottom-10 overflow-y-auto">
+      <view class="">
+        <view class="bg-white shadow-lg border border-gray-200 p-2">
+          
+          <view a:if="{{ i18n.languageCode == 'st' }}">
+            <!-- 1. TSEBETSO -->
+            <view class="mb-1">
+              <text class="text-sm">
+                Tokomane ena e fana ka Lipehelo tseo papali ea Moloantoa AIR Hunt le WIN e tla etsoa tlas'a tsona, ho kenyeletsoa litokelo esitana le boikarabelo ba Vodacom le Basebelisi.
+              </text>
+            </view>
+            <view>
+              <text class="font-bold mb-1">1. TSEBETSO</text>
+            </view>
+            <view class="mb-1">
+              <text class="text-sm">
+                1.1 Papali ena ea Moloantoa AIR Hunt le WIN ke sethala sa lipotso le likarabo se fumanehang ka USSD *145# le App ea Vodacom Lesotho.
+              </text>
+            </view>
+            <view class="mb-3">
+              <text class="text-sm">
+                1.2 Litšebeletso tsohle tse amanang le papali ena, li etsoa ka marang-rang a likhahano, me Vodacom e ke ke ea jarisoa boikarabelo ba ketso efe kapa efe kapa tahlehelo e ka bakoang ke ho khaoha ha litšebeletso tsa marang-rang a likhahano, e ka ba litokiso tse reriloeng leha e le ketso efe feela e seng taolong ea Vodacom.
+              </text>
+            </view>
+          
+            <!-- 2. BOIKARABELO BA VODACOM -->
+            <view>
+              <text class="font-bold mb-1">2. BOIKARABELO BA VODACOM</text>
+            </view>
+          
+            <view class="mb-1">
+              <text class="text-sm">
+                2.1 Vodacom e tla fana ka sethala sa papali ea Moloantoa AIR Hunt le WIN bakeng la Basebelisi bohle ba Vodacom Lesotho (hybrid le prepaid).
+              </text>
+            </view>
+          
+            <view class="mb-1">
+              <text class="text-sm">
+                2.2 Vodacom e tla fana ka lintlha tse hlakileng mabapi le ho nka karolo, ho kenyeletsoa mekhoa ea ho kena ka USSD *145# le App.
+              </text>
+            </view>
+          
+            <view class="mb-1">
+              <text class="text-sm">
+                2.3 Vodacom e itlama ho romela melaetsa ea tlhokomeliso (SMS le App notifications) mabapi le nako ea papali, liphetho, le likhau tse hapuoeng.
+              </text>
+            </view>
+          
+            <view class="mb-1">
+              <text class="text-sm">
+                2.4 Vodacom e tla tsebisa Basebelisi ka nako, e bang ho tla ba le ho khaoha ho reriloeng ha litšebeletso, e ba ke ka lebaka la litokiso kapa ntlafatso mechineng ea tšebetso, ho ka amang phumaneho ea papali. Basebelisi ba tla tsebisoa ka melaetsa ea tsoibila (SMS) leha e le ka mokhoa ofe feela o teng.
+              </text>
+            </view>
+          
+            <view class="mb-3">
+              <text class="text-sm">
+                2.5 Vodacom e tla tsebisa le ho hlokomelisa Basebelisi ka liphetoho esitana le lintlafatso papaling ena ea Moloantoa AIR Hunt le WIN, pele litaba tse joalo li kena tšebetsong.
+              </text>
+            </view>
+          
+            <!-- 3. BOIKARABELO BA BAREKI -->
+            <view>
+              <text class="font-bold mb-1">3. BOIKARABELO BA BAREKI</text>
+            </view>
+          
+            <view>
+              <text class="font-bold mb-1">3.1 Tse Hlokehang ho Tšoaneleha</text>
+            </view>
+          
+            <view class="mb-1">
+              <text class="text-sm">
+                3.1.1 Papali ea Moloantoa AIR Hunt le WIN e bulehetsoe Bareki bohle ba Vodacom Lesotho ba lilemo tse 18 le ho feta, ba nang le li-subscription tsa hybrid kapa prepaid.
+              </text>
+            </view>
+          
+            <view class="mb-1">
+              <text class="text-sm">
+                3.1.2 Ho nka karolo ho hloka tefo ea M2.00 ka papali ka 'ngoe, e tla tlosoa ka USSD *145# kapa App.
+              </text>
+            </view>
+          
+            <view class="mb-3">
+              <text class="text-sm">
+                3.1.3 Bareki ba tlameha ho qeta karolo ea thuto ea metsotsoana e 60 (60-second educational snippet) pele ba araba lipotso tsa papali.
+              </text>
+            </view>
+          
+            <view>
+              <text class="font-bold mb-1">3.2 Melaoana ea Papali</text>
+            </view>
+          
+            <view class="mb-1">
+              <text class="text-sm">
+                3.2.1 Bahapi ba tla khethoa ho latela ho nepahala le lebelo la likarabo (First-Come, First-Served bakeng la Mass Hunts).
+              </text>
+            </view>
+          
+            <view class="mb-1">
+              <text class="text-sm">
+                3.2.2 Vodacom e na le tokelo ea ho se lumelle li-account tse belaelloang ka tšebeliso ea li-bot kapa bomenemene ba theknoloji.
+              </text>
+            </view>
+          
+            <view class="mb-3">
+              <text class="text-sm">
+                3.2.3 Likhau ha li fetisetsoe ho batho ba bang 'me li tla fanoa ho latela nako le maemo a lets'olo le itseng.
+              </text>
+            </view>
+          
+            <!-- 4. LITEFELLO TSA LITŠEBELETSO -->
+            <view>
+              <text class="font-bold mb-1">4. LITEFELLO TSA LITŠEBELETSO</text>
+            </view>
+          
+            <view class="mb-1">
+              <text class="text-sm">
+                4.1 Tefo ea M2.00 ka papali e tla tlosoa ho chelete ea mohala (airtime) kapa ka M-Pesa, joalokaha ho bontšitsoe nakong ea ho kena.
+              </text>
+            </view>
+          
+            <view class="mb-3">
+              <text class="text-sm">
+                4.2 Vodacom e tla fana ka lethathamo la litefiso tse ling (mohlala, ho fumana likhau kapa ho kenella hape) ho Basebelisi ba kopang lethathamo le joalo.
+              </text>
+            </view>
+          
+            <!-- 5. THIBELO EA HO HLATSUOA HA CHELETE -->
+            <view>
+              <text class="font-bold mb-1">5. THIBELO EA HO HLATSUOA HA CHELETE E SENG MOLAONG LE TŠEHETSO EA BOKHUKHUNI KA LICHELETE</text>
+            </view>
+          
+            <view class="mb-1">
+              <text class="text-sm">
+                5.1 Ts'ebetso eohle ea papali ea Moloantoa AIR Hunt le WIN e tla latela Manane a Vodacom a khahlano le ho Hlatsuoa ha Chelete e Seng Molaong.
+              </text>
+            </view>
+          
+            <view class="mb-1">
+              <text class="text-sm">
+                5.2 Vodacom e na le tokelo ea ho emisa kapa ho thibela karolo ea basebelisi ba belaelloang ka ts'ebeliso e seng molaong.
+              </text>
+            </view>
+          
+            <view class="mb-3">
+              <text class="text-sm">
+                5.3 Meeli eohle ea M-Pesa mabapi le ho kenya / ntša chelete e tla sebetsa le ho Basebelisi ba nkang karolo papaling ena.
+              </text>
+            </view>
+          
+            <!-- 6. TŚIRELETSO LE BOIKARABELO -->
+            <view>
+              <text class="font-bold mb-1">6. TŚIRELETSO LE BOIKARABELO</text>
+            </view>
+          
+            <view class="mb-1">
+              <text class="text-sm">
+                6.1 Vodacom e tla jara boikarabelo ba litsenyehelo tseo ho netefalitsoeng hore li bakiloe ka kotloloho ke ho se tsotelle kapa bohlasoa ba eona.
+              </text>
+            </view>
+          
+            <view class="mb-1">
+              <text class="text-sm">
+                6.2 Vodacom ha e kenyeletse ho jara boikarabelo ba tšenyeho / tahlehelo efe kapa efe leha e le eng feela e ka hlahelang Basebelisi maemong a latelang:
+              </text>
+            </view>
+          
+            <view class="mb-1 ml-2">
+              <text class="text-sm">6.2.1 Moo Basebelisi ba entseng 'momori ka morero oa ho qhekella papali,</text>
+            </view>
+            <view class="mb-1 ml-2">
+              <text class="text-sm">6.2.2 Bohlasoeng ba Basebelisi ho boloka lekunutu la li-account tsa bona,</text>
+            </view>
+            <view class="mb-1 ml-2">
+              <text class="text-sm">6.2.3 Moo Basebelisi ba sa lateleng melaoana ea papali joalokaha e bontšitsoe Lipehelong tsena, le;</text>
+            </view>
+            <view class="mb-3 ml-2">
+              <text class="text-sm">6.2.4 Ketso efe kapa efe e sa amahanngoeng le phoso kapa bohlasoa ba Vodacom.</text>
+            </view>
+          
+            <view class="mb-3">
+              <text class="text-sm">6.3 Basebelisi ba lumellana ho se jarise Vodacom molato oa tseko kapa qoso e ka tobisoang Vodacom ho latela temana ea 6.2 kaholimo.</text>
+            </view>
+          
+            <!-- 7. HO FANYEHOA NAKOANA LE THAROLLA EA LIKHOHLANO -->
+            <view>
+              <text class="font-bold mb-1">7. HO FANYEHOA NAKOANA LE THAROLLA EA LIKHOHLANO</text>
+            </view>
+          
+            <view class="mb-1">
+              <text class="text-sm">
+                7.1 Vodacom e na le tokelo ea ho fanyeha nakoana kapa ho emisa papali ea Moloantoa AIR Hunt le WIN haeba e fumana Basebelisi ba sa ikamahanye le Lipehelo tsena, kapa ha ho tsoela-pele ka papali ho beha ka mosing melaoana ea ts'ireletso.
+              </text>
+            </view>
+          
+            <view class="mb-3">
+              <text class="text-sm">
+                7.2 Basebelisi ba tla rarolla likhohlano tsa bona ntle le ho kenya Vodacom moo likhohlano tse joalo li sa bakoang ke Vodacom. Leha ho le joalo Vodacom e tla fana ka thuso e hlokehang ha e tsebisitsoe.
+              </text>
+            </view>
+          
+            <!-- 8. LIPEHELO TSA M-PESA -->
+            <view>
+              <text class="font-bold mb-1">8. LIPEHELO TSA M-PESA</text>
+            </view>
+          
+            <view class="mb-3">
+              <text class="text-sm">
+                Lipehelo tsena li tla baloa 'moho le lipehelo tse tloaelehileng tsa M-Pesa, 'me moo ho nang le ho se lumellane lipakeng tsa lipehelo tsena le tse tloaelehileng tsa M-Pesa, ho tla lateloa tse tloaelehileng tsa M-Pesa.
+              </text>
+            </view>
+          
+          </view>
+          <view a:if="{{ i18n.languageCode == 'en' }}">
+            <!-- 1. INTRODUCTION -->
+            <view class="mb-1">
+              <text class="text-sm">
+                This document sets out the Terms and Conditions under which the Moloantoa AIR Hunt and WIN game will be operated, including the rights and responsibilities of Vodacom and Users.
+              </text>
+            </view>
+            <view>
+              <text class="font-bold mb-1">1. INTRODUCTION</text>
+            </view>
+            <view class="mb-1">
+              <text class="text-sm">
+                1.1 This Moloantoa AIR Hunt and WIN game is a question-and-answer gaming platform available via USSD *145# and the Vodacom Lesotho App.
+              </text>
+            </view>
+            <view class="mb-3">
+              <text class="text-sm">
+                1.2 All services related to this game are provided through telecommunications networks, and Vodacom shall not be held liable for any action or loss caused by interruption of telecommunications services, whether scheduled maintenance or any event beyond Vodacom's control.
+              </text>
+            </view>
+          
+            <!-- 2. VODACOM RESPONSIBILITIES -->
+            <view>
+              <text class="font-bold mb-1">2. VODACOM RESPONSIBILITIES</text>
+            </view>
+          
+            <view class="mb-1">
+              <text class="text-sm">
+                2.1 Vodacom will provide the Moloantoa AIR Hunt and WIN game platform for all Vodacom Lesotho subscribers (hybrid and prepaid).
+              </text>
+            </view>
+          
+            <view class="mb-1">
+              <text class="text-sm">
+                2.2 Vodacom will provide clear information regarding participation, including entry methods via USSD *145# and the App.
+              </text>
+            </view>
+          
+            <view class="mb-1">
+              <text class="text-sm">
+                2.3 Vodacom undertakes to send notifications (SMS and App notifications) regarding game timings, results, and prizes won.
+              </text>
+            </view>
+          
+            <view class="mb-1">
+              <text class="text-sm">
+                2.4 Vodacom will notify Users in advance of any planned service interruptions, whether due to maintenance or system upgrades, that may affect the availability of the game. Users will be informed via SMS or any other available method.
+              </text>
+            </view>
+          
+            <view class="mb-3">
+              <text class="text-sm">
+                2.5 Vodacom will notify and inform Users of any changes or updates to this Moloantoa AIR Hunt and WIN game, before such changes take effect.
+              </text>
+            </view>
+          
+            <!-- 3. USER RESPONSIBILITIES -->
+            <view>
+              <text class="font-bold mb-1">3. USER RESPONSIBILITIES</text>
+            </view>
+          
+            <view>
+              <text class="font-bold mb-1">3.1 Eligibility Requirements</text>
+            </view>
+          
+            <view class="mb-1">
+              <text class="text-sm">
+                3.1.1 The Moloantoa AIR Hunt and WIN game is open to all Vodacom Lesotho subscribers aged 18 and above, with hybrid or prepaid subscriptions.
+              </text>
+            </view>
+          
+            <view class="mb-1">
+              <text class="text-sm">
+                3.1.2 Participation requires a M2.00 deduction per play, which will be charged via USSD *145# or the App.
+              </text>
+            </view>
+          
+            <view class="mb-3">
+              <text class="text-sm">
+                3.1.3 Users must complete the 60-second educational snippet before answering the quiz questions.
+              </text>
+            </view>
+          
+            <view>
+              <text class="font-bold mb-1">3.2 Game Rules</text>
+            </view>
+          
+            <view class="mb-1">
+              <text class="text-sm">
+                3.2.1 Winners are determined based on accuracy and speed (First-Come, First-Served for Mass Hunts).
+              </text>
+            </view>
+          
+            <view class="mb-1">
+              <text class="text-sm">
+                3.2.2 Vodacom reserves the right to disqualify accounts suspected of automated bot usage or fraudulent manipulation.
+              </text>
+            </view>
+          
+            <view class="mb-3">
+              <text class="text-sm">
+                3.2.3 Rewards are non-transferable and subject to the terms of the specific campaign period.
+              </text>
+            </view>
+          
+            <!-- 4. SERVICE FEES -->
+            <view>
+              <text class="font-bold mb-1">4. SERVICE FEES</text>
+            </view>
+          
+            <view class="mb-1">
+              <text class="text-sm">
+                4.1 The M2.00 fee per play will be deducted from the user's airtime or via M-Pesa, as indicated at the time of entry.
+              </text>
+            </view>
+          
+            <view class="mb-3">
+              <text class="text-sm">
+                4.2 Vodacom will provide a schedule of any additional fees (e.g., for prize redemption or re-entry) to Users who request such schedule.
+              </text>
+            </view>
+          
+            <!-- 5. ANTI-MONEY LAUNDERING -->
+            <view>
+              <text class="font-bold mb-1">5. ANTI-MONEY LAUNDERING AND FINANCIAL CRIME PREVENTION</text>
+            </view>
+          
+            <view class="mb-1">
+              <text class="text-sm">
+                5.1 All operations of the Moloantoa AIR Hunt and WIN game shall comply with Vodacom's Anti-Money Laundering policies.
+              </text>
+            </view>
+          
+            <view class="mb-1">
+              <text class="text-sm">
+                5.2 Vodacom reserves the right to suspend or prohibit participation by users suspected of unlawful activity.
+              </text>
+            </view>
+          
+            <view class="mb-3">
+              <text class="text-sm">
+                5.3 All M-Pesa limits regarding deposits and withdrawals shall apply to Users participating in this game.
+              </text>
+            </view>
+          
+            <!-- 6. SECURITY AND LIABILITY -->
+            <view>
+              <text class="font-bold mb-1">6. SECURITY AND LIABILITY</text>
+            </view>
+          
+            <view class="mb-1">
+              <text class="text-sm">
+                6.1 Vodacom shall bear liability for losses proven to have been directly caused by its negligence or carelessness.
+              </text>
+            </view>
+          
+            <view class="mb-1">
+              <text class="text-sm">
+                6.2 Vodacom shall not assume liability for any loss or damage whatsoever that may occur to Users in the following circumstances:
+              </text>
+            </view>
+          
+            <view class="mb-1 ml-2">
+              <text class="text-sm">6.2.1 Where Users have colluded with the intent to defraud the game,</text>
+            </view>
+            <view class="mb-1 ml-2">
+              <text class="text-sm">6.2.2 Where Users are negligent in safeguarding their account credentials,</text>
+            </view>
+            <view class="mb-1 ml-2">
+              <text class="text-sm">6.2.3 Where Users fail to follow the game rules as outlined in these Terms, and;</text>
+            </view>
+            <view class="mb-3 ml-2">
+              <text class="text-sm">6.2.4 Any action not attributable to Vodacom's error or negligence.</text>
+            </view>
+          
+            <view class="mb-3">
+              <text class="text-sm">6.3 Users agree not to hold Vodacom liable for any claim or complaint brought against Vodacom under clause 6.2 above.</text>
+            </view>
+          
+            <!-- 7. SUSPENSION AND DISPUTE RESOLUTION -->
+            <view>
+              <text class="font-bold mb-1">7. SUSPENSION AND DISPUTE RESOLUTION</text>
+            </view>
+          
+            <view class="mb-1">
+              <text class="text-sm">
+                7.1 Vodacom reserves the right to temporarily suspend or terminate the Moloantoa AIR Hunt and WIN game if it finds Users not complying with these Terms, or if continued operation of the game, in Vodacom's view, compromises its policies and security protocols.
+              </text>
+            </view>
+          
+            <view class="mb-3">
+              <text class="text-sm">
+                7.2 Users shall resolve their disputes without involving Vodacom where such disputes are not caused by Vodacom. However, Vodacom shall provide reasonable assistance when notified and requested by Users.
+              </text>
+            </view>
+          
+            <!-- 8. M-PESA TERMS -->
+            <view>
+              <text class="font-bold mb-1">8. M-PESA TERMS</text>
+            </view>
+          
+            <view class="mb-3">
+              <text class="text-sm">
+                These Terms shall be read together with the standard M-Pesa Terms and Conditions, and in the event of any inconsistency between these Terms and the standard M-Pesa Terms, the standard M-Pesa Terms shall prevail.
+              </text>
+            </view>
+          
           </view>
         </view>
       </view>
     </view>
 
-    <!-- Language Toggle - Buttons on own row -->
-    <view class=" mb-1.5">
-      <view class="bg-gray-900 border border-red-600/30 rounded-lg p-1.5">
-        <view class="flex items-center gap-1.5 mb-1.5">
-          
-          <text class="text-gray-200 text-xs font-medium">Select language / Khetha Puo</text>
-        </view>
-        
-        <!-- Side by Side Language Buttons on their own row -->
-        <view class="flex gap-2">
-          <!-- English Button -->
-          <view onTap="onEnglishanguage" class="flex-1 relative group">
-            <view class="relative w-full py-1 text-xs font-semibold text-center rounded shadow-lg transition-all duration-150 
-              {{i18n.languageCode === 'en' ? 'bg-gradient-to-r from-red-600 to-red-500 text-white shadow-red-600/20' : 'bg-gray-800 border border-gray-700 text-gray-300'}}
-              {{isLoading ? 'opacity-50 pointer-events-none' : ''}}
-              active:scale-95">
-              <text>English</text>
-            </view>
-          </view>
-          
-          <!-- Sesotho Button -->
-          <view onTap="onSesothoLanguage" class="flex-1 relative group">
-            <view class="relative w-full py-1 text-xs font-semibold text-center rounded transition-all duration-150 
-              {{i18n.languageCode === 'st' ? 'bg-gradient-to-r from-red-600 to-red-500 text-white shadow-red-600/20' : 'bg-gray-800 border border-gray-700 text-gray-300'}}
-              {{isLoading ? 'opacity-50 pointer-events-none' : ''}}
-              active:scale-95">
-              <text>Sesotho</text>
-            </view>
-          </view>
-        </view>
-
-      </view>
-    </view>
-
-    <!-- CTA Button 
-    <view class="px-1 relative group">
-      <view class="absolute -inset-1 bg-gradient-to-r from-red-600 via-red-500 to-red-400 rounded-lg opacity-50 group-active:opacity-100 blur-lg transition duration-300"></view>
-      <button-red onClickMe="onGetStarted" text="{{ i18n.index.get_started }}">
-        <view class="relative w-full py-2.5 bg-gradient-to-r from-red-600 via-red-500 to-red-400 text-white text-sm font-bold text-center rounded-lg shadow-lg shadow-red-600/20 active:scale-[0.98] transition-all duration-150 overflow-hidden">
-          <view class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer"></view>
-          <view class="relative flex items-center justify-center gap-1">
-            <text>{{ i18n.index.get_started }}</text>
-            <text class="text-lg">⚡</text>
-          </view>
-        </view>
+    <!-- Fixed button at bottom -->
+    <view class="absolute bottom-0 left-0 right-0 bg-white px-1 py-2 shadow-lg border-t border-gray-200">
+      <button-red onClickMe="acceptTermsAndCondition" text="{{i18n.index.accept_button_text || 'KE A LUMELELA'}}">
       </button-red>
-    </view>
--->
-    <!-- Bottom indicators -->
-    <view class="flex justify-center mt-3 gap-1">
-      <view class="w-1.5 h-1.5 bg-red-600 rounded-full animate-bounce"></view>
-      <view class="w-1.5 h-1.5 bg-red-500 rounded-full animate-bounce" style="animation-delay: 0.2s;"></view>
-      <view class="w-1.5 h-1.5 bg-red-400 rounded-full animate-bounce" style="animation-delay: 0.4s;"></view>
     </view>
 
   </view>

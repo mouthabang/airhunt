@@ -4,6 +4,8 @@
   "languageCode": "en", 
   "index": {
     "continue":"Continue",
+    "accept_button_text": "I AGREE",
+
     "get_started":  "Get Started",
     "tagline":"Explore The Spirit",
     "daily_hunt": "Daily Hunt",

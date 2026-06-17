@@ -12,8 +12,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+     
       fontFamily: {
-        'sans': ['Roboto', 'Noto Sans', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        // Make VodafoneRegular the default for all font categories
+        'sans': ['VodafoneRegular', 'Roboto', 'Noto Sans', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        'serif': ['VodafoneRegular', 'serif'],
+        'mono': ['VodafoneRegular', 'monospace'],
+        // Keep your custom utilities
+        'vodafone-regular': ['VodafoneRegular', 'sans-serif'],
+        'vodafone-light': ['VodafoneLight', 'sans-serif'],
       },
       fontSize: {
         'xs': ['12px', { lineHeight: '16px' }],
@@ -24,7 +31,7 @@ module.exports = {
         '2xl': ['24px', { lineHeight: '32px' }],
         '3xl': ['28px', { lineHeight: '36px' }],
         '4xl': ['32px', { lineHeight: '40px' }],
-      },
+      }, 
       screens: {
         'xs': '360px',
         'sm': '392px',
@@ -78,6 +85,7 @@ module.exports = {
         'screen-2xl': '1024px', // Tablets
         
         // Viewport heights optimized for mobile
+        'vh-5': '5vh',
         'vh-10': '10vh',
         'vh-20': '20vh',
         'vh-25': '25vh',
@@ -188,33 +196,6 @@ module.exports = {
         'sheet-md': '500px',
         'sheet-lg': '700px',
       },
-      animation: {
-        'gradient': 'gradient 3s ease infinite',
-        'shimmer': 'shimmer 2s linear infinite',
-        'float': 'float 6s ease-in-out infinite',
-        'glow': 'glow 2s ease-in-out infinite alternate',
-      },
-      keyframes: {
-        gradient: {
-          '0%, 100%': { backgroundPosition: '0% 50%' },
-          '50%': { backgroundPosition: '100% 50%' },
-        },
-        shimmer: {
-          '0%': { transform: 'translateX(-100%)' },
-          '100%': { transform: 'translateX(200%)' },
-        },
-        float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-20px)' },
-        },
-        glow: {
-          '0%': { boxShadow: '0 0 20px rgba(147, 51, 234, 0.3)' },
-          '100%': { boxShadow: '0 0 40px rgba(147, 51, 234, 0.6)' },
-        },
-      },
-      backgroundSize: {
-        '300%': '300%',
-      }
     },
   },
   plugins: [],

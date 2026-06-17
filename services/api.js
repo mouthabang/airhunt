@@ -1,150 +1,135 @@
-export const mokhatloApi = {
+const MSISDN_UAT = "26658685782"
+const BASE_URL_PROD = "https://b7e9-41-191-207-34.ngrok-free.app/";
+const CURRENT_ENV = "UAT";
 
-  getGroups: () => {
-    return new Promise((resolve, reject) => {
-      my.call("makeRequest", {
-        replaceParams: ["pin", "msisdn"],
-        configOptions: '{"useCachedPin": true }',
-        isAsync: true,
-        payload: {
-          "pin": "pin",
-          "msisdn": "msisdn"
-        },
-        url: "/gsl/groups",
-        success: (res) => {
-          console.log(res);
-          resolve(res);
-        },
-        fail: (error) => {
-          console.log(error);
-          reject(error);
-        },
+export const airhuntAPI = {
+
+  checkCustomerExists: ( ) => {
+
+    if (CURRENT_ENV == "UAT") {
+      return new Promise((resolve, reject) => {
+        my.request({
+          url: BASE_URL_PROD+ 'api/v1/accounts/customers/list/by-msisdn',
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          data: {
+            msisdn: MSISDN_UAT
+          },
+          success: (result) => {
+            console.log(result); 
+            resolve(result.data);
+          },
+          fail: (error) => {
+            resolve(error.data);
+          }
+        });
       });
-    });
 
+    } else {
+      return new Promise((resolve, reject) => {
+
+        my.call("makeRequest", {
+          "payload": JSON.stringify({
+            "msisdn": "msisdn",
+            "proxiedRequest": {
+              "needsIdentity": false,
+              "needsPIN": false,
+              "requestInfo": {
+                "httpMethod": "POST",
+                "payload": JSON.stringify({
+                  "action": 'G',
+                  "eventId": ENVENT_ID,
+                  "msisdn": "msisdn",
+                  "miniAppTxId": MINI_APP_ID,
+                  "thirdPartyRef": inputValue
+                }),
+                "headers": {
+                  "Content-Type": "application/json"
+                }
+              }
+            }
+          }),
+          "replaceParams": [
+            "msisdn"
+          ],
+          "url": BASE_URL_PROD,
+          success: (result) => {
+            console.log(result);
+            resolve(JSON.parse(result.proxiedResponse.data.content));
+          },
+          fail: (error) => {
+            console.log(error);
+            reject(error);
+          }
+        });
+      });
+    }
   },
 
-  getGroupInfo: (groupId) => {
-    return new Promise((resolve, reject) => {
-      my.call("makeRequest", {
-        replaceParams: ["pin", "msisdn", "currency", "accountType"],
-        configOptions: '{"useCachedPin": true }',
-        isAsync: true,
-        payload: {
-          "pin": "pin",
-          "msisdn": "msisdn",
-          "currency": "currency",
-          "accountType": "accountType",
-          "groupId": groupId
-        },
-        url: "/gsl/groups/details",
-        success: (res) => {
-          console.log(res);
-          resolve(res);
-        },
-        fail: (error) => {
-          console.log(error);
-          reject(error);
-        },
-      });
-    });
+  createCustomer: ( ) => {
 
+    if (CURRENT_ENV == "UAT") {
+      return new Promise((resolve, reject) => {
+        my.request({
+          url: BASE_URL_PROD+ 'api/v1/accounts/create/customers',
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          data: {
+            msisdn: MSISDN_UAT
+          },
+          success: (result) => {
+            console.log(result); 
+            resolve(result.data);
+          },
+          fail: (error) => {
+            resolve(error.data);
+          }
+        });
+      });
+
+    } else {
+      return new Promise((resolve, reject) => {
+
+        my.call("makeRequest", {
+          "payload": JSON.stringify({
+            "msisdn": "msisdn",
+            "proxiedRequest": {
+              "needsIdentity": false,
+              "needsPIN": false,
+              "requestInfo": {
+                "httpMethod": "POST",
+                "payload": JSON.stringify({
+                  "action": 'G',
+                  "eventId": ENVENT_ID,
+                  "msisdn": "msisdn",
+                  "miniAppTxId": MINI_APP_ID,
+                  "thirdPartyRef": inputValue
+                }),
+                "headers": {
+                  "Content-Type": "application/json"
+                }
+              }
+            }
+          }),
+          "replaceParams": [
+            "msisdn"
+          ],
+          "url": BASE_URL_PROD,
+          success: (result) => {
+            console.log(result);
+            resolve(JSON.parse(result.proxiedResponse.data.content));
+          },
+          fail: (error) => {
+            console.log(error);
+            reject(error);
+          }
+        });
+      });
+    }
   },
-
-  checkAndConfirm: (groupId, amount, transactionType) => {
-    return new Promise((resolve, reject) => {
-      my.call("makeRequest", {
-        replaceParams: ["pin", "msisdn", "currency"],
-        configOptions: '{"useCachedPin": true }',
-        isAsync: true,
-        payload: {
-          "pin": "pin",
-          "msisdn": "msisdn",
-          "currency": "currency",
-          "transactionType": transactionType,
-          "groupId": groupId,
-          "amount": amount
-        },
-        url: "/gsl/check-and-confirm",
-        success: (res) => {
-          console.log(res);
-          resolve(res);
-        },
-        fail: (error) => {
-          console.log(error);
-          reject(error);
-        },
-      });
-    });
-
-  },
-
-  transaction: (groupId, amount, transactionType) => {
-    return new Promise((resolve, reject) => {
-      my.call("makeRequest", {
-        replaceParams: ["pin", "msisdn", "currency"],
-        configOptions: '{"useCachedPin": true }',
-        isAsync: true,
-        payload: {
-          "pin": "pin",
-          "msisdn": "msisdn",
-          "currency": "currency",
-          "transactionType": transactionType,
-          "groupId": groupId,
-          "amount": amount
-        },
-        url: "/gsl/transaction",
-        success: (res) => {
-          console.log(res);
-          resolve(res);
-        },
-        fail: (error) => {
-          console.log(error);
-          reject(error);
-        },
-      });
-    });
-  },
-
-  
-  customerBalance: () => {
-    return new Promise((resolve, reject) => {
-      my.call("makeRequest", {
-        replaceParams: ["pin", "msisdn", "currency"],
-        configOptions: '{"useCachedPin": true }',
-        isAsync: true,
-        payload: {
-          "pin": "pin",
-          "msisdn": "26659017966"
-        },
-        url: "/customerBalance",
-        success: (res) => {
-          console.log(res);
-          resolve(res);
-        },
-        fail: (error) => {
-          console.log(error);
-          reject(error);
-        },
-      });
-    });
-  },
-  requestCustomerKyc(scopes) {
-
-    return new Promise((resolve, reject) => {
-      my.call("userScopes", {
-        scopes: scopes,
-        success: function (res) {
-          console.log(res);
-          resolve(res);
-        },
-        fail: function (err) {
-          console.log(err);
-          reject(err);
-        }
-      });
-    });
-  }
-
 
 }

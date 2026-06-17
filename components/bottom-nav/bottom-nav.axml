@@ -1,0 +1,23 @@
+<!-- components/bottom-nav/bottom-nav.axml -->
+<view class="fixed bottom-0 left-0 w-full bg-gray-100 border-t border-gray-200 flex justify-around items-center h-[150rpx]">
+  <!-- Home Tab -->
+  <view class="flex flex-col items-center justify-center flex-1 text-center" onTap="navigateToHome">
+    <image 
+      src="{{currentPage === 'Home' ? '/assets/imgs/home.png' : '/assets/imgs/home_dark.png'}}" 
+      style="width: 56rpx; height: 56rpx; margin-bottom: 8rpx;"
+      mode="aspectFit"
+    />
+    <text class="text-xs" style="color: {{currentPage === 'Home' ? '#E60000' : '#666'}}">{{i18n.bottomNav.home}}</text>
+  </view>
+
+  <!-- History Tab -->
+  <view class="flex flex-col items-center justify-center flex-1 text-center" onTap="navigateToHistory">
+    <image 
+      src="{{currentPage === 'History' ? '/assets/imgs/ticket.png' : '/assets/imgs/ticket_dark.png'}}" 
+      style="width: 60rpx; height: 60rpx; margin-bottom: 8rpx;"
+      mode="aspectFit"
+    />
+    <text class="text-xs" style="color: {{currentPage === 'History' ? '#E60000' : '#666'}}">{{i18n.bottomNav.myTickets}}</text>
+  </view>
+
+</view>
