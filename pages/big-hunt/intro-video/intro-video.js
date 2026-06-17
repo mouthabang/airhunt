@@ -11,19 +11,27 @@ Page({
     playerVars: {
       'autoplay': 1, 
       'modestbranding': 1,
-      isLoading: false
-
+      isLoading: true
 
     }
   },
   onLoad() {
     loadLanguage(app.languageCode);
 
-
+   
     this.setData({
-      i18n: app.i18n,
-      isLoading: false
+      isLoading: true,
+      i18n: app.i18n
+
     });
+
+    setTimeout(() => {
+
+      this.setData({
+        isLoading: false
+      });
+
+    }, 2000);
 
   },
   goToQuestions() {

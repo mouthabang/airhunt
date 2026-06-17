@@ -12,7 +12,7 @@
       </view>
     </view>
   </view>
-
+ 
   <!-- Animated floating particles -->
   <view class="absolute inset-0">
     <view class="absolute top-10 left-10 w-16 h-16 bg-red-600/20 rounded-full blur-xl animate-float">

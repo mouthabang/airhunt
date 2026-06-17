@@ -1,6 +1,8 @@
 {
   "usingComponents": {
-    "button-red": "../../../components/button-red-full/button-red-full"
+    "button-red": "../../../components/button-red-full/button-red-full",
+    "loading-spinner": "/components/loading-spinner/loading-spinner"
+
 
   }
 }

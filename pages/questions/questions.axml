@@ -59,7 +59,6 @@
           </view>
 
           <view class="flex justify-end">
-            <text class="text-sm text-white">{{countdown}}s</text>
           </view>
         </view>
 
@@ -133,7 +132,7 @@
         <text class="text-gray-600 text-sm block mb-4">{{feedback.message}}</text>
         <view class="flex gap-2 justify-center">
           <button 
-            class="flex-1 bg-gray-200 text-gray-700 py-2 px-4 rounded-lg text-sm font-medium"
+            class="flex-1 bg-gray-200 text-gray-700 py-1 px-4 rounded-lg text-sm font-medium"
             onTap="closeFeedback"
           >
             Continue

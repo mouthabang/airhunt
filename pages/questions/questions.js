@@ -8,14 +8,13 @@ Page({
   data: {
     isLoading: false,
     questionCount: 1,
-    countdown: 10,
     progressPercent: 0,
     showFeedback: false,
     feedback: {
       isCorrect: false,
       message: ''
     },
-    quizCompleted: false,
+    quizCompleted: true,
     score: 0,
     currentQuestionIndex: 0,
     questions: [
